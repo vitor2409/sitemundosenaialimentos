@@ -58,6 +58,10 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
   -webkit-tap-highlight-color:transparent;
 }
 .nav-btn .ico{font-size:1.25rem;line-height:1}
+.nav-icon-img{display:block;width:1.25em;height:1.25em;object-fit:contain}
+.nav-icon-video{display:block;width:1.25em;height:1.25em;object-fit:contain;border-radius:50%;background:transparent}
+.nav-icon-video::-webkit-media-controls{display:none!important}
+.nav-icon-image{display:block;width:1.25em;height:1.25em;object-fit:contain}
 .nav-btn:hover{color:#fff;background:rgba(56,130,255,.16)}
 .nav-btn:active{transform:scale(.96)}
 .nav-btn.active{
@@ -189,7 +193,7 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
 
   <nav class="nav-senai" aria-label="Seções do site">
     <div class="nav-container" role="tablist" aria-label="Produtos e informações" aria-orientation="horizontal">
-      <button id="tab-leite" class="nav-btn active" type="button" data-tab="leite" role="tab" aria-controls="leite" aria-selected="true" tabindex="0"><span class="ico">🥛</span>Leite Fermentado</button>
+      <button id="tab-leite" class="nav-btn active" type="button" data-tab="leite" role="tab" aria-controls="leite" aria-selected="true" tabindex="0"><span class="ico"><img class="nav-icon-img" src="leite-icon.png" alt=""></span>Leite Fermentado</button>
       <button id="tab-hamburguer" class="nav-btn" type="button" data-tab="hamburguer" role="tab" aria-controls="hamburguer" aria-selected="false" tabindex="-1"><span class="ico">🍗</span>Hambúrguer de Frango</button>
       <button id="tab-sobre" class="nav-btn" type="button" data-tab="sobre" role="tab" aria-controls="sobre" aria-selected="false" tabindex="-1"><span class="ico">🎓</span>Sobre Nós</button>
     </div>
