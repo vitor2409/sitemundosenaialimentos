@@ -58,10 +58,13 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
   -webkit-tap-highlight-color:transparent;
 }
 .nav-btn .ico{font-size:1.25rem;line-height:1}
-.nav-icon-img{display:block;width:1.25em;height:1.25em;object-fit:contain}
+.nav-icon-img{display:block;width:2.5em;height:2.5em;object-fit:contain;transform-origin:center;transition:transform .18s ease,filter .18s ease}
 .nav-icon-video{display:block;width:1.25em;height:1.25em;object-fit:contain;border-radius:50%;background:transparent}
 .nav-icon-video::-webkit-media-controls{display:none!important}
-.nav-icon-image{display:block;width:1.25em;height:1.25em;object-fit:contain}
+.nav-icon-image{display:block;width:2.5em;height:2.5em;object-fit:contain;transform-origin:center;transition:transform .18s ease,filter .18s ease}
+.nav-btn:hover .nav-icon-image,.nav-btn:focus-visible .nav-icon-image,.nav-btn:hover .nav-icon-img,.nav-btn:focus-visible .nav-icon-img{transform:translateY(-3px) scale(1.08);filter:drop-shadow(0 3px 5px rgba(255,61,127,.55))}
+.nav-btn:active .nav-icon-image,.nav-btn:active .nav-icon-img{transform:scale(1.22) rotate(-5deg);filter:drop-shadow(0 3px 5px rgba(255,61,127,.6))}
+
 .nav-btn:hover{color:#fff;background:rgba(56,130,255,.16)}
 .nav-btn:active{transform:scale(.96)}
 .nav-btn.active{
@@ -86,6 +89,8 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
   background:linear-gradient(120deg,rgba(255,61,127,.22),rgba(109,40,217,.3) 55%,rgba(30,91,255,.3));
 }
 .product-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,var(--pink),var(--violet),var(--cyan));box-shadow:0 0 14px var(--pink)}
+.product-title-row{display:flex;align-items:center;gap:14px}
+.product-title-icon{width:clamp(64px,18vw,96px);height:clamp(64px,18vw,96px);object-fit:contain;flex:none;filter:drop-shadow(0 4px 8px rgba(0,0,0,.3))}
 .product-header h2{font-style:italic;font-weight:800;font-size:clamp(1.5rem,6.4vw,2.1rem);line-height:1.1;color:#fff;text-shadow:0 0 22px rgba(255,61,127,.5)}
 .product-header p{margin-top:8px;color:#d5defa;font-weight:500;line-height:1.5;font-size:.95rem}
 .product-body{padding:20px 16px 22px}
@@ -173,6 +178,7 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
 @media(max-width:380px){
   .nav-btn{font-size:.7rem;min-height:54px;padding:7px 3px}
   .nav-btn .ico{font-size:1.05rem}
+  .nav-icon-image{width:1.7em;height:1.7em}
 
   .ai-input-group{flex-direction:column}
   .ai-input-group .btn-senai{width:100%}
@@ -194,7 +200,7 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
   <nav class="nav-senai" aria-label="Seções do site">
     <div class="nav-container" role="tablist" aria-label="Produtos e informações" aria-orientation="horizontal">
       <button id="tab-leite" class="nav-btn active" type="button" data-tab="leite" role="tab" aria-controls="leite" aria-selected="true" tabindex="0"><span class="ico"><img class="nav-icon-img" src="leite-icon.png" alt=""></span>Leite Fermentado</button>
-      <button id="tab-hamburguer" class="nav-btn" type="button" data-tab="hamburguer" role="tab" aria-controls="hamburguer" aria-selected="false" tabindex="-1"><span class="ico">🍗</span>Hambúrguer de Frango</button>
+      <button id="tab-hamburguer" class="nav-btn" type="button" data-tab="hamburguer" role="tab" aria-controls="hamburguer" aria-selected="false" tabindex="-1"><span class="ico"><img class="nav-icon-image" src="hamburguer-icon.png" alt=""></span>Hambúrguer de Frango</button>
       <button id="tab-sobre" class="nav-btn" type="button" data-tab="sobre" role="tab" aria-controls="sobre" aria-selected="false" tabindex="-1"><span class="ico">🎓</span>Sobre Nós</button>
     </div>
   </nav>
@@ -205,7 +211,7 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
     <section id="leite" class="product-section active" role="tabpanel" aria-labelledby="tab-leite" tabindex="0">
       <div class="product-card">
         <div class="product-header">
-          <h2>Leite Fermentado</h2>
+          <div class="product-title-row"><h2>Leite Fermentado</h2><img class="product-title-icon" src="leite-icon.png" alt="" aria-hidden="true"></div>
           <p>Bebida fermentada proposta com culturas lácticas, inspirada em produtos probióticos</p>
         </div>
         <div class="product-body">
@@ -246,7 +252,7 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
     <section id="hamburguer" class="product-section" role="tabpanel" aria-labelledby="tab-hamburguer" tabindex="0" hidden>
       <div class="product-card">
         <div class="product-header">
-          <h2>Hambúrguer de Frango com Vegetais</h2>
+          <div class="product-title-row"><h2>Hambúrguer de Frango com Vegetais</h2><img class="product-title-icon" src="hamburguer-icon.png" alt="" aria-hidden="true"></div>
           <p>Proposta de hambúrguer de frango com vegetais, desenvolvida pela turma</p>
         </div>
         <div class="product-body">
