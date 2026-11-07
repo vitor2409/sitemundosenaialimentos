@@ -161,8 +161,10 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
   .about-header{padding:34px}
 }
 @media(max-width:699px){
-  .header-senai{height:auto;min-height:0;max-height:none;display:block}
-  .header-senai img{display:block;width:100%;height:auto;object-fit:contain;transform:none}
+  .header-senai{height:clamp(250px,72vw,340px);overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .header-senai img{width:100%;height:100%;object-fit:cover;object-position:center;transform:none}
+  .nav-container{padding:8px 6px;gap:5px}
+  .nav-btn{min-height:66px;font-size:clamp(.72rem,3.3vw,.86rem);line-height:1.15;padding:8px 3px}
 }
 @media(max-width:380px){
   .nav-btn{font-size:.7rem;min-height:54px;padding:7px 3px}
