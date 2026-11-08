@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0A1330">
-<meta name="description" content="Projeto da turma de Operador de Processamento de Alimentos e Bebidas do SENAI Videira: leite fermentado e hambúrguer de frango com vegetais.">
+<meta name="robots" content="index,follow">
+<meta name="description" content="Projetos das turmas da manhã e da tarde de Operador de Processamento de Alimentos e Bebidas do SENAI Videira para o Mundo SENAI 2026.">
 <title>Mundo SENAI 2026 | Alimentos</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,800;1,900&display=swap" rel="stylesheet">
 <style>
@@ -38,10 +39,16 @@ body::before{
 :focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
 button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
 .assistant-status{margin-top:10px;color:var(--muted);font-size:.88rem;line-height:1.5}
-.sensory-section{margin-top:24px;padding:16px;border-radius:18px;background:linear-gradient(160deg,rgba(30,91,255,.18),rgba(5,10,32,.6));border:1px solid rgba(56,189,248,.4)}
-.sensory-section>p{margin:-4px 0 14px;color:#d5defa;line-height:1.55}
-.sensory-form{overflow:hidden;border-radius:12px;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.sensory-section{margin-top:24px;padding:clamp(16px,3vw,26px);border-radius:22px;background:radial-gradient(120% 100% at 0% 0%,rgba(255,61,127,.13),transparent 55%),linear-gradient(145deg,rgba(14,27,72,.92),rgba(5,10,32,.88));border:1px solid rgba(120,150,255,.34);box-shadow:0 18px 42px rgba(0,0,10,.24),inset 0 1px rgba(255,255,255,.06)}
+.sensory-section>p{margin:-4px 0 18px;color:#d5defa;line-height:1.6}
+.sensory-form{overflow:hidden;border-radius:18px;background:#fff;box-shadow:0 12px 32px rgba(0,0,0,.28),0 0 0 4px rgba(56,189,248,.08)}
 .sensory-form iframe{display:block;width:100%;height:2031px;border:0;background:#fff}
+.sensory-heading{display:flex;align-items:center;gap:14px;margin:0 0 14px}
+.sensory-mark{width:46px;height:46px;flex:none;display:grid;place-items:center;border-radius:15px;color:#fff;font-size:1.35rem;background:linear-gradient(135deg,var(--pink),var(--violet) 58%,var(--blue));box-shadow:0 6px 18px rgba(255,61,127,.24)}
+.sensory-eyebrow{margin:0 0 3px;color:var(--cyan);font-size:.68rem;font-weight:700;letter-spacing:.13em}
+.sensory-title{color:#fff;font-size:clamp(1.1rem,4vw,1.35rem);line-height:1.2;font-weight:800}
+.sensory-section>p{margin:0 0 18px;color:#d5defa;line-height:1.6}
+@media(max-width:699px){.sensory-section{margin-top:20px;padding:15px;border-radius:18px}.sensory-form{margin:0 -3px;border-radius:14px}}
 .product-section[hidden]{display:none!important}
 
 /* ===== CABEÇALHO ===== */
@@ -116,18 +123,7 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
 .btn-senai-full{width:100%;margin-top:22px}
 .btn-senai.alt{background:transparent;border:1.5px solid var(--cyan);color:var(--cyan);box-shadow:0 0 14px rgba(56,189,248,.25)}
 
-/* ===== CONSULTOR ===== */
-.ai-section{margin-top:24px;padding:16px;border-radius:18px;background:linear-gradient(160deg,rgba(30,91,255,.22),rgba(5,10,32,.6));border:1px solid rgba(56,189,248,.45);box-shadow:0 0 24px rgba(56,189,248,.12)}
-.ai-section h3{display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:1.05rem;font-weight:700;color:#fff}
-.ai-input-group{display:flex;gap:10px}
-.ai-input-group input{flex:1;min-width:0;min-height:48px;padding:12px 16px;border-radius:12px;border:1.5px solid var(--line);background:rgba(5,10,32,.8);color:#fff;font:500 1rem 'Montserrat',sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
-.ai-input-group input::placeholder{color:#8091c4}
-.ai-input-group input:focus{border-color:var(--pink);box-shadow:0 0 0 3px rgba(255,61,127,.25)}
-.ai-response{display:none;margin-top:12px;padding:14px;border-radius:14px;background:rgba(5,10,32,.75);border-left:4px solid var(--pink);font-size:.95rem;line-height:1.6;color:#eaf0ff;overflow-wrap:anywhere}
-.ai-response.show{display:block;animation:rise .3s ease both}
-.loading-dots:after{content:'...';animation:dots 1s infinite}
-@keyframes dots{0%,20%{content:'.'}40%{content:'..'}60%,100%{content:'...'}}
-
+/* ===== CONSULTOR ===== */
 /* ===== SOBRE NÓS ===== */
 .about-header{position:relative;overflow:hidden;text-align:center;margin-bottom:16px;padding:26px 16px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(255,61,127,.22),rgba(109,40,217,.35) 55%,rgba(30,91,255,.3));box-shadow:0 14px 40px rgba(0,0,10,.4)}
 .about-header h2{font-style:italic;font-weight:900;font-size:clamp(1.9rem,8vw,2.6rem);color:#fff;text-shadow:0 0 24px rgba(255,61,127,.55)}
@@ -212,94 +208,67 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
       <div class="product-card">
         <div class="product-header">
           <div class="product-title-row"><h2>Leite Fermentado</h2><img class="product-title-icon" src="leite-icon.png" alt="" aria-hidden="true"></div>
-          <p>Bebida fermentada proposta com culturas lácticas, inspirada em produtos probióticos</p>
+          <p>Projeto de bebida fermentada desenvolvido pela turma de Alimentos</p>
         </div>
         <div class="product-body">
-          <p>
-            Proposta de bebida à base de leite fermentado. A formulação, a cultura utilizada e as condições de
-            processo precisam ser registradas e validadas antes de divulgar características nutricionais
-            ou benefícios à saúde.
-          </p>
+          <p>A turma apresenta uma proposta de leite fermentado e compartilha o processo de desenvolvimento do produto.</p>
 
           <div class="tech-specs">
-            <div class="spec-item"><div class="spec-ico">🥛</div><div class="spec-text"><div class="spec-label">Base:</div><div class="spec-value">Leite pasteurizado + cultura láctica (identificar gênero, espécie e cepa utilizados)</div></div></div>
-            <div class="spec-item"><div class="spec-ico">🧪</div><div class="spec-text"><div class="spec-label">Fermentação:</div><div class="spec-value">Parâmetro de referência do projeto: 24 h; validar temperatura, pH e ponto final do processo</div></div></div>
-            <div class="spec-item"><div class="spec-ico">🛡️</div><div class="spec-text"><div class="spec-label">Ponto de atenção:</div><div class="spec-value">A presença e a quantidade de culturas vivas devem ser confirmadas por análise do produto final.</div></div></div>
-          </div>
-
-          <div class="ai-section">
-            <h3>🔬 Assistente técnico do projeto</h3>
-            <div class="ai-input-group">
-              <input type="text" id="ai-input-leite" placeholder="Ex: Como funciona a fermentação?" aria-label="Pergunta sobre o Leite Fermentado" enterkeyhint="send" maxlength="500" autocomplete="off">
-              <button class="btn-senai" type="button" onclick="askGemini('leite')">Perguntar</button>
-            </div>
-            <p class="assistant-status" id="ai-status-leite"></p>
-            <div id="ai-response-leite" class="ai-response" aria-live="polite" aria-atomic="true"></div>
+            <div class="spec-item"><div class="spec-ico">🥛</div><div class="spec-text"><div class="spec-label">Base:</div><div class="spec-value">Leite e cultura láctica; consulte a equipe para conhecer a formulação apresentada.</div></div></div>
+            <div class="spec-item"><div class="spec-ico">🧪</div><div class="spec-text"><div class="spec-label">Fermentação:</div><div class="spec-value">A equipe apresentará os parâmetros definidos durante o desenvolvimento do projeto.</div></div></div>
+            <div class="spec-item"><div class="spec-ico">🛡️</div><div class="spec-text"><div class="spec-label">Ponto de atenção:</div><div class="spec-value">As características do produto são apresentadas pela equipe durante o evento.</div></div></div>
           </div>
 
           <section class="sensory-section" aria-labelledby="sensory-title-leite">
-            <h3 class="sec-title" id="sensory-title-leite">📊 Avaliação sensorial</h3>
-            <p>Preencha o formulário para avaliar o Leite Fermentado.</p>
-            <div class="sensory-form">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1FtVJSmB9mbiBVgCSino8d_N0CjwmMsuunsvy1_qFAwApkA/viewform?embedded=true" title="Formulário de avaliação sensorial — Leite Fermentado" width="640" height="2031" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Carregando…</iframe>
+            <div class="sensory-heading">
+              <span class="sensory-mark" aria-hidden="true">✦</span>
+              <div><p class="sensory-eyebrow">QUEREMOS SABER SUA OPINIÃO</p><h3 class="sensory-title" id="sensory-title-leite">Avaliação sensorial</h3></div>
             </div>
+            
+            <p>Preencha o formulário para avaliar o Leite Fermentado.</p>
+            <div class="sensory-form"><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1FtVJSmB9mbiBVgCSino8d_N0CjwmMsuunsvy1_qFAwApkA/viewform?embedded=true" title="Formulário de avaliação sensorial" width="640" height="2031" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Carregando…</iframe></div>
           </section>
         </div>
       </div>
-    </section>
-
-    <!-- Produto 2 -->
+    </section>    <!-- Produto 2 -->
     <section id="hamburguer" class="product-section" role="tabpanel" aria-labelledby="tab-hamburguer" tabindex="0" hidden>
       <div class="product-card">
         <div class="product-header">
           <div class="product-title-row"><h2>Hambúrguer de Frango com Vegetais</h2><img class="product-title-icon" src="hamburguer-icon.png" alt="" aria-hidden="true"></div>
-          <p>Proposta de hambúrguer de frango com vegetais, desenvolvida pela turma</p>
+          <p>Projeto de hambúrguer de frango com vegetais desenvolvido pela turma de Alimentos</p>
         </div>
         <div class="product-body">
-          <p>
-            Elaborado como proposta com frango desfiado, cenoura, abobrinha e ervas. A composição final e
-            os valores nutricionais devem ser confirmados na ficha técnica do produto.
-          </p>
+          <p>A turma apresenta uma proposta de hambúrguer de frango com vegetais e compartilha as etapas de desenvolvimento do produto.</p>
 
           <div class="tech-specs">
-            <div class="spec-item"><div class="spec-ico">🥕</div><div class="spec-text"><div class="spec-label">Composição:</div><div class="spec-value">Frango desfiado, cenoura, abobrinha, cebola e temperos naturais</div></div></div>
-            <div class="spec-item"><div class="spec-ico">💪</div><div class="spec-text"><div class="spec-label">Teor Proteico:</div><div class="spec-value">Meta estimada: 18 g de proteína por unidade de 120 g (confirmar por cálculo nutricional ou análise laboratorial)</div></div></div>
-            <div class="spec-item"><div class="spec-ico">✨</div><div class="spec-text"><div class="spec-label">Diferencial:</div><div class="spec-value">Proposta sem conservantes adicionados; teor de fibras e vitaminas depende da formulação e deve ser validado</div></div></div>
-          </div>
-
-          <div class="ai-section">
-            <h3>🌾 Assistente técnico do projeto</h3>
-            <div class="ai-input-group">
-              <input type="text" id="ai-input-hamburguer" placeholder="Ex: Como aumentar a vida útil do produto?" aria-label="Pergunta sobre o Hambúrguer de Frango" enterkeyhint="send" maxlength="500" autocomplete="off">
-              <button class="btn-senai" type="button" onclick="askGemini('hamburguer')">Perguntar</button>
-            </div>
-            <p class="assistant-status" id="ai-status-hamburguer"></p>
-            <div id="ai-response-hamburguer" class="ai-response" aria-live="polite" aria-atomic="true"></div>
+            <div class="spec-item"><div class="spec-ico">🥕</div><div class="spec-text"><div class="spec-label">Composição:</div><div class="spec-value">Frango e vegetais; consulte a equipe para conhecer a composição apresentada.</div></div></div>
+            <div class="spec-item"><div class="spec-ico">💪</div><div class="spec-text"><div class="spec-label">Teor Proteico:</div><div class="spec-value">Informação nutricional não exibida; consulte a equipe sobre a ficha técnica.</div></div></div>
+            <div class="spec-item"><div class="spec-ico">✨</div><div class="spec-text"><div class="spec-label">Diferencial:</div><div class="spec-value">A proposta valoriza a combinação de frango e vegetais.</div></div></div>
           </div>
 
           <section class="sensory-section" aria-labelledby="sensory-title-hamburguer">
-            <h3 class="sec-title" id="sensory-title-hamburguer">📊 Avaliação sensorial</h3>
-            <p>Preencha o formulário para avaliar o Hambúrguer de Frango com Vegetais.</p>
-            <div class="sensory-form">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1FtVJSmB9mbiBVgCSino8d_N0CjwmMsuunsvy1_qFAwApkA/viewform?embedded=true" title="Formulário de avaliação sensorial — Hambúrguer de Frango com Vegetais" width="640" height="2031" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Carregando…</iframe>
+            <div class="sensory-heading">
+              <span class="sensory-mark" aria-hidden="true">✦</span>
+              <div><p class="sensory-eyebrow">QUEREMOS SABER SUA OPINIÃO</p><h3 class="sensory-title" id="sensory-title-hamburguer">Avaliação sensorial</h3></div>
             </div>
+            
+            <p>Preencha o formulário para avaliar o Hambúrguer de Frango com Vegetais.</p>
+            <div class="sensory-form"><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1FtVJSmB9mbiBVgCSino8d_N0CjwmMsuunsvy1_qFAwApkA/viewform?embedded=true" title="Formulário de avaliação sensorial" width="640" height="2031" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Carregando…</iframe></div>
           </section>
         </div>
       </div>
-    </section>
-
-    <!-- Sobre Nós -->
+    </section>    <!-- Sobre Nós -->
     <section id="sobre" class="product-section" role="tabpanel" aria-labelledby="tab-sobre" tabindex="0" hidden>
       <div class="about-header">
         <h2>Sobre Nós</h2>
-        <p class="subtitle">Aprendizagem Industrial de Operador de Processamento de Alimentos e Bebidas</p>
-        <div class="about-badge">SENAI Videira • Turma 2026 • Turno Manhã</div>
+        <p class="subtitle">Operador de Processamento de Alimentos e Bebidas</p>
+        <div class="about-badge">SENAI Videira • Turmas da manhã e da tarde • 2026</div>
       </div>
 
       <div class="info-grid">
-        <div class="info-card"><div class="icon">🎓</div><div class="label">Curso</div><div class="value">Operador de Alimentos</div></div>
+        <div class="info-card"><div class="icon">🎓</div><div class="label">Curso</div><div class="value">Operador de Processamento de Alimentos e Bebidas</div></div>
         <div class="info-card"><div class="icon">🏫</div><div class="label">Instituição</div><div class="value">SENAI Videira</div></div>
-        <div class="info-card"><div class="icon">👥</div><div class="label">Turma</div><div class="value">20 Alunos</div></div>
+        <div class="info-card"><div class="icon">👥</div><div class="label">Turmas</div><div class="value">Manhã e tarde</div></div>
         <div class="info-card"><div class="icon">📅</div><div class="label">Ano</div><div class="value">2026</div></div>
       </div>
 
@@ -308,8 +277,8 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
           <h3 class="sec-title">🌱 Nossa História</h3>
           <div class="about-text">
             <p>
-              Somos a turma de <strong>Aprendizagem Industrial de Operador de Processamento de Alimentos e Bebidas</strong>
-              do <strong>SENAI Videira</strong>, formada por <strong>20 alunos</strong> do turno da manhã, unidos pela paixão
+              Somos a turma de <strong>Operador de Processamento de Alimentos e Bebidas</strong>
+              do <strong>SENAI Videira</strong>, com alunos dos turnos da <strong>manhã e da tarde</strong>, unidos pela paixão
               por inovação e alimentação saudável.
             </p>
             <p>
@@ -318,10 +287,7 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
               que unem tecnologia, sabor e nutrição: o <strong>Leite Fermentado</strong> e o
               <strong>Hambúrguer de Frango com Vegetais</strong>.
             </p>
-            <p>
-              Cada produto foi pensado para incentivar o consumo de alimentos funcionais e de vegetais,
-              além de promover o reaproveitamento e a valorização de ingredientes regionais.
-            </p>
+            <p>Os projetos permitem aplicar conhecimentos de processamento, qualidade e desenvolvimento de produtos de alimentos.</p>
           </div>
 
           <div class="highlight-box">
@@ -338,15 +304,6 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
             <p class="goal">✅ Explorar o uso de <strong>tecnologia</strong> e boas práticas de fabricação;</p>
             <p class="goal">✅ Demonstrar o potencial dos alunos do SENAI para o mercado de trabalho.</p>
           </div>
-
-          <h3 class="sec-title">👨‍🏫 Nossos Professores</h3>
-          <p class="about-text">Agradecemos imensamente aos nossos professores que tornaram este projeto possível:</p>
-          <div class="teachers-list">
-            <div class="teacher-tag">👩‍🏫 Cássia</div>
-            <div class="teacher-tag">👩‍🏫 Fabiana</div>
-            <div class="teacher-tag">👨‍🏫 Carlos</div>
-          </div>
-
           <h3 class="sec-title">💙 Agradecimentos</h3>
           <div class="about-text">
             <p>
@@ -364,15 +321,10 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
 
   <footer class="footer-senai">
     <p>Mundo SENAI 2026 | SENAI Videira | Área de Alimentos</p>
-    <p>Desenvolvido pela Turma 2026 - Operador de Processamento de Alimentos e Bebidas</p>
+    <p>Desenvolvido pelas turmas da manhã e da tarde - Operador de Processamento de Alimentos e Bebidas</p>
   </footer>
 </div>
-
 <script>
-// Para ativar o consultor, configure aqui a URL de um backend HTTPS seguro.
-// A chave do serviço de IA deve permanecer no servidor, nunca neste arquivo.
-const API_ENDPOINT = "";
-
 const navBtns = [...document.querySelectorAll('.nav-btn')];
 const panels = [...document.querySelectorAll('.product-section')];
 function activateTab(button, moveFocus = false) {
@@ -404,67 +356,6 @@ navBtns.forEach((button, index) => {
     activateTab(navBtns[next], true);
   });
 });
-
-const productNames = {
-  leite: 'Leite Fermentado (bebida fermentada)',
-  hamburguer: 'Hambúrguer de Frango com Vegetais'
-};
-for (const id of Object.keys(productNames)) {
-  const input = document.getElementById(`ai-input-${id}`);
-  const button = input.parentElement.querySelector('button');
-  const status = document.getElementById(`ai-status-${id}`);
-  if (!API_ENDPOINT) {
-    input.disabled = true;
-    button.disabled = true;
-    status.textContent = 'Consultor técnico temporariamente indisponível.';
-  }
-  input.addEventListener('keydown', event => {
-    if (event.key === 'Enter' && !event.isComposing) askGemini(id);
-  });
-}
-
-async function askGemini(productId) {
-  const input = document.getElementById(`ai-input-${productId}`);
-  const button = input.parentElement.querySelector('button');
-  const response = document.getElementById(`ai-response-${productId}`);
-  const query = input.value.trim();
-  const showText = message => {
-    response.textContent = message;
-    response.classList.add('show');
-  };
-  if (!query) return showText('Digite uma pergunta para continuar.');
-  if (query.length > 500) return showText('A pergunta deve ter até 500 caracteres.');
-  if (!API_ENDPOINT) return showText('Consultor técnico temporariamente indisponível.');
-
-  button.disabled = true;
-  response.setAttribute('aria-busy', 'true');
-  response.textContent = 'Consultando...';
-  response.classList.add('show');
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 15000);
-  try {
-    const result = await fetch(API_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ produto: productNames[productId], pergunta: query }),
-      signal: controller.signal
-    });
-    if (!result.ok) throw new Error(`HTTP ${result.status}`);
-    const data = await result.json();
-    const answer = typeof data.resposta === 'string' ? data.resposta.trim().slice(0, 4000) : '';
-    response.textContent = answer || 'Não foi possível obter uma resposta técnica no momento.';
-  } catch (error) {
-    console.error('Falha ao consultar o assistente técnico.', error);
-    showText(error.name === 'AbortError' ? 'A consulta demorou demais. Tente novamente.' : 'Não foi possível conectar ao assistente. Tente novamente mais tarde.');
-  } finally {
-    clearTimeout(timeout);
-    button.disabled = false;
-    response.setAttribute('aria-busy', 'false');
-  }
-}
-window.askGemini = askGemini;
-
-// Fundo animado: desliga quando a aba fica oculta e respeita movimento reduzido.
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -472,10 +363,8 @@ let points = [], width = 0, height = 0, frame = 0;
 function initCanvas() {
   if (!ctx) return;
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  width = window.innerWidth;
-  height = window.innerHeight;
-  canvas.width = Math.round(width * dpr);
-  canvas.height = Math.round(height * dpr);
+  width = window.innerWidth; height = window.innerHeight;
+  canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   const count = width < 600 ? 26 : 45;
   points = Array.from({ length: count }, () => ({
@@ -489,22 +378,17 @@ function draw() {
   if (!ctx) return;
   ctx.clearRect(0, 0, width, height);
   const maxDistance = width < 600 ? 90 : 120;
-  for (let i = 0; i < points.length; i++) {
-    const a = points[i];
-    for (let j = i + 1; j < points.length; j++) {
-      const b = points[j], distance = Math.hypot(a.x - b.x, a.y - b.y);
-      if (distance < maxDistance) {
-        ctx.strokeStyle = `rgba(56,189,248,${(1 - distance / maxDistance) * .22})`;
-        ctx.lineWidth = 1;
-        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-      }
+  for (let i = 0; i < points.length; i++) for (let j = i + 1; j < points.length; j++) {
+    const a = points[i], b = points[j], distance = Math.hypot(a.x-b.x, a.y-b.y);
+    if (distance < maxDistance) {
+      ctx.strokeStyle = `rgba(56,189,248,${(1-distance/maxDistance)*.22})`;
+      ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
     }
   }
   points.forEach(point => {
     ctx.fillStyle = point.pink ? 'rgba(255,61,127,.85)' : 'rgba(120,200,255,.8)';
-    ctx.shadowColor = point.pink ? '#FF3D7F' : '#38BDF8';
-    ctx.shadowBlur = 8;
-    ctx.beginPath(); ctx.arc(point.x, point.y, point.radius, 0, Math.PI * 2); ctx.fill();
+    ctx.shadowColor = point.pink ? '#FF3D7F' : '#38BDF8'; ctx.shadowBlur = 8;
+    ctx.beginPath(); ctx.arc(point.x,point.y,point.radius,0,Math.PI*2); ctx.fill();
   });
   ctx.shadowBlur = 0;
 }
@@ -512,25 +396,19 @@ function animate() {
   if (motionPreference.matches || document.hidden) { frame = 0; return; }
   points.forEach(point => {
     point.x += point.vx; point.y += point.vy;
-    if (point.x < -10) point.x = width + 10;
-    if (point.x > width + 10) point.x = -10;
-    if (point.y < -10) point.y = height + 10;
-    if (point.y > height + 10) point.y = -10;
+    if(point.x < -10) point.x=width+10; if(point.x > width+10) point.x=-10;
+    if(point.y < -10) point.y=height+10; if(point.y > height+10) point.y=-10;
   });
-  draw();
-  frame = requestAnimationFrame(animate);
+  draw(); frame = requestAnimationFrame(animate);
 }
 function syncAnimation() {
-  if (frame) cancelAnimationFrame(frame);
-  frame = 0;
-  if (!motionPreference.matches && !document.hidden) frame = requestAnimationFrame(animate);
-  else draw();
+  if(frame) cancelAnimationFrame(frame); frame=0;
+  if(!motionPreference.matches && !document.hidden) frame=requestAnimationFrame(animate); else draw();
 }
-window.addEventListener('resize', initCanvas, { passive: true });
-document.addEventListener('visibilitychange', syncAnimation);
-motionPreference.addEventListener?.('change', syncAnimation);
-initCanvas();
-syncAnimation();
+window.addEventListener('resize',initCanvas,{passive:true});
+document.addEventListener('visibilitychange',syncAnimation);
+motionPreference.addEventListener?.('change',syncAnimation);
+initCanvas(); syncAnimation();
 </script>
 </body>
 </html>
