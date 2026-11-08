@@ -111,6 +111,15 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
 .spec-label{font-weight:700;font-size:.8rem;color:var(--cyan);letter-spacing:.04em;margin-bottom:3px}
 .spec-value{color:#fff;line-height:1.5;font-size:.98rem;overflow-wrap:anywhere}
 
+.recipe-card{margin:22px 0;padding:18px;border-radius:18px;background:linear-gradient(145deg,rgba(13,25,67,.88),rgba(5,10,32,.72));border:1px solid rgba(120,150,255,.34);box-shadow:0 10px 28px rgba(0,0,10,.2)}
+.recipe-heading{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.recipe-heading h3{font-size:1.15rem;color:#fff;font-weight:800}
+.recipe-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,rgba(255,61,127,.3),rgba(30,91,255,.38));font-size:1.35rem}
+.recipe-yield{margin:0 0 14px;color:var(--muted);font-size:.9rem;line-height:1.5}
+.recipe-list{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.recipe-list li{padding:10px 12px;border:1px solid rgba(120,150,255,.2);border-radius:11px;background:rgba(5,10,32,.45);color:#f3f6ff;font-size:.9rem;line-height:1.45}
+.recipe-list strong{color:var(--cyan)}
+@media(max-width:520px){.recipe-card{padding:15px}.recipe-list{grid-template-columns:1fr}}
 /* ===== BOTÕES ===== */
 .btn-senai{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border:none;border-radius:12px;cursor:pointer;
@@ -151,6 +160,8 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
 .footer-senai{position:relative;padding:22px 16px calc(22px + env(safe-area-inset-bottom));text-align:center;font-size:.85rem;color:#fff;background:rgba(7,14,38,.9);border-top:1px solid var(--line)}
 .footer-senai::before{content:"";position:absolute;top:-1px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--pink),var(--cyan),transparent)}
 .footer-senai p+p{margin-top:4px;font-size:.78rem;color:var(--muted)}
+.footer-instagram{display:inline-flex;align-items:center;gap:6px;margin-top:6px;color:#d5defa;font-size:.78rem;font-weight:600;text-decoration:none;transition:color .2s,transform .2s}
+.footer-instagram:hover,.footer-instagram:focus-visible{color:#fff;transform:translateY(-1px)}
 
 /* ===== TABLET / DESKTOP ===== */
 @media(min-width:700px){
@@ -182,9 +193,14 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+/* Atalho fixo inferior: compacto, acessível e com espaço reservado no documento. */
+body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+.quick-nav{position:fixed;left:50%;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;transform:translateX(-50%);width:min(300px,calc(100% - 32px));padding:5px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;border:1px solid rgba(120,150,255,.42);border-radius:18px;background:rgba(7,14,38,.88);backdrop-filter:blur(14px);box-shadow:0 8px 28px rgba(0,0,12,.42),0 0 20px rgba(30,91,255,.16)}.quick-nav button{min-height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:5px 3px;border:1px solid transparent;border-radius:12px;background:transparent;color:var(--muted);font:600 .66rem/1.1 "Montserrat",sans-serif;cursor:pointer}.quick-nav button span:first-child{font-size:1rem;display:grid;place-items:center}.quick-nav img{display:block;width:25px;height:25px;object-fit:contain}.quick-nav button:hover,.quick-nav button:focus-visible,.quick-nav button.active{color:#fff;background:linear-gradient(135deg,rgba(255,61,127,.28),rgba(30,91,255,.3));border-color:rgba(255,61,127,.45)}
+@media(max-width:360px){.quick-nav{width:calc(100% - 20px)}.quick-nav button{font-size:.6rem}}
+@media(min-width:700px){body{padding-bottom:0}.quick-nav{display:none}}
 </style>
 </head>
-<body>
+<body id="topo">
 
 <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
@@ -212,14 +228,17 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
         </div>
         <div class="product-body">
           <p>A turma apresenta uma proposta de leite fermentado e compartilha o processo de desenvolvimento do produto.</p>
-
-          <div class="tech-specs">
-            <div class="spec-item"><div class="spec-ico">🥛</div><div class="spec-text"><div class="spec-label">Base:</div><div class="spec-value">Leite e cultura láctica; consulte a equipe para conhecer a formulação apresentada.</div></div></div>
-            <div class="spec-item"><div class="spec-ico">🧪</div><div class="spec-text"><div class="spec-label">Fermentação:</div><div class="spec-value">A equipe apresentará os parâmetros definidos durante o desenvolvimento do projeto.</div></div></div>
-            <div class="spec-item"><div class="spec-ico">🛡️</div><div class="spec-text"><div class="spec-label">Ponto de atenção:</div><div class="spec-value">As características do produto são apresentadas pela equipe durante o evento.</div></div></div>
-          </div>
-
-          <section class="sensory-section" aria-labelledby="sensory-title-leite">
+<section class="recipe-card" aria-labelledby="recipe-milk-title">
+            <div class="recipe-heading"><span class="recipe-icon" aria-hidden="true">🥛</span><h3 id="recipe-milk-title">Receita do leite fermentado</h3></div>
+            <p class="recipe-yield">Proporção informada para 1 litro de leite</p>
+            <ul class="recipe-list">
+              <li><strong>Leite desnatado:</strong> 1 litro</li>
+              <li><strong>Iska probiótica (Yakult ou similar):</strong> 1 frasco (80 ml)</li>
+              <li><strong>Açúcar cristal ou refinado:</strong> 70 a 90 g</li>
+              <li><strong>Água filtrada para a calda:</strong> 100 ml</li>
+              <li><strong>Essência de baunilha ou pêssego (opcional):</strong> 2 ml (aprox. 40 gotas)</li>
+            </ul>
+          </section>          <section class="sensory-section" aria-labelledby="sensory-title-leite">
             <div class="sensory-heading">
               <span class="sensory-mark" aria-hidden="true">✦</span>
               <div><p class="sensory-eyebrow">QUEREMOS SABER SUA OPINIÃO</p><h3 class="sensory-title" id="sensory-title-leite">Avaliação sensorial</h3></div>
@@ -239,14 +258,25 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
         </div>
         <div class="product-body">
           <p>A turma apresenta uma proposta de hambúrguer de frango com vegetais e compartilha as etapas de desenvolvimento do produto.</p>
-
-          <div class="tech-specs">
-            <div class="spec-item"><div class="spec-ico">🥕</div><div class="spec-text"><div class="spec-label">Composição:</div><div class="spec-value">Frango e vegetais; consulte a equipe para conhecer a composição apresentada.</div></div></div>
-            <div class="spec-item"><div class="spec-ico">💪</div><div class="spec-text"><div class="spec-label">Teor Proteico:</div><div class="spec-value">Informação nutricional não exibida; consulte a equipe sobre a ficha técnica.</div></div></div>
-            <div class="spec-item"><div class="spec-ico">✨</div><div class="spec-text"><div class="spec-label">Diferencial:</div><div class="spec-value">A proposta valoriza a combinação de frango e vegetais.</div></div></div>
-          </div>
-
-          <section class="sensory-section" aria-labelledby="sensory-title-hamburguer">
+<section class="recipe-card" aria-labelledby="recipe-burger-title">
+            <div class="recipe-heading"><span class="recipe-icon" aria-hidden="true">🍔</span><h3 id="recipe-burger-title">Ingredientes do hambúrguer</h3></div>
+            <p class="recipe-yield">Rendimento da ficha: aproximadamente 18,023 kg de mistura</p>
+            <ul class="recipe-list">
+              <li><strong>Carne de frango:</strong> 15.000 g</li>
+              <li><strong>Creme de cebola:</strong> 800 g</li>
+              <li><strong>Pimentão amarelo, verde e/ou vermelho:</strong> 280 g</li>
+              <li><strong>Brócolis:</strong> 285 g</li>
+              <li><strong>Abobrinha:</strong> 300 g</li>
+              <li><strong>Cenoura:</strong> 550 g</li>
+              <li><strong>Batata salsa:</strong> 175 g</li>
+              <li><strong>Batata doce:</strong> 175 g</li>
+              <li><strong>Abóbora cabotiá:</strong> 175 g</li>
+              <li><strong>Sal:</strong> 225 g</li>
+              <li><strong>Noz-moscada:</strong> 10 g</li>
+              <li><strong>Salsa desidratada:</strong> 18 g</li>
+              <li><strong>Alho em pó:</strong> 30 g</li>
+            </ul>
+          </section>          <section class="sensory-section" aria-labelledby="sensory-title-hamburguer">
             <div class="sensory-heading">
               <span class="sensory-mark" aria-hidden="true">✦</span>
               <div><p class="sensory-eyebrow">QUEREMOS SABER SUA OPINIÃO</p><h3 class="sensory-title" id="sensory-title-hamburguer">Avaliação sensorial</h3></div>
@@ -319,14 +349,21 @@ button:disabled,input:disabled{opacity:.6;cursor:not-allowed}
 
   </main>
 
+  <nav class="quick-nav" aria-label="Atalhos das seções">
+    <button type="button" data-quick-tab="leite"><span aria-hidden="true"><img src="leite-icon.png" alt=""></span><span>Leite</span></button>
+    <button type="button" data-quick-tab="hamburguer"><span aria-hidden="true"><img src="hamburguer-icon.png" alt=""></span><span>Hambúrguer</span></button>
+    <button type="button" data-quick-tab="sobre"><span aria-hidden="true">🎓</span><span>Sobre nós</span></button>
+  </nav>
   <footer class="footer-senai">
-    <p>Mundo SENAI 2026 | SENAI Videira | Área de Alimentos</p>
-    <p>Desenvolvido pelas turmas da manhã e da tarde - Operador de Processamento de Alimentos e Bebidas</p>
+<p>Mundo SENAI 2026 | SENAI Videira | Área de Alimentos</p>
+    <p>Desenvolvido por Vitor Duarte</p>
+    <a class="footer-instagram" href="https://www.instagram.com/vitorr.duart/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Vitor Duarte">Instagram: @vitorr.duart <span aria-hidden="true">↗</span></a>
   </footer>
 </div>
 <script>
 const navBtns = [...document.querySelectorAll('.nav-btn')];
 const panels = [...document.querySelectorAll('.product-section')];
+const quickNavButtons = [...document.querySelectorAll('[data-quick-tab]')];
 function activateTab(button, moveFocus = false) {
   const tabId = button.dataset.tab;
   navBtns.forEach(btn => {
@@ -340,9 +377,20 @@ function activateTab(button, moveFocus = false) {
     panel.hidden = !selected;
     panel.classList.toggle('active', selected);
   });
+  quickNavButtons.forEach(quickButton => {
+    const selected = quickButton.dataset.quickTab === tabId;
+    quickButton.classList.toggle('active', selected);
+    quickButton.setAttribute('aria-current', selected ? 'page' : 'false');
+  });
   if (moveFocus) button.focus();
   window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 }
+quickNavButtons.forEach(quickButton => {
+  quickButton.addEventListener('click', () => {
+    const mainButton = navBtns.find(button => button.dataset.tab === quickButton.dataset.quickTab);
+    if (mainButton) activateTab(mainButton);
+  });
+});
 navBtns.forEach((button, index) => {
   button.addEventListener('click', () => activateTab(button));
   button.addEventListener('keydown', event => {
